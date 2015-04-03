@@ -24,4 +24,17 @@ public class FibonacciTest {
         assertArrayEquals( expectedArray.toArray(), fibonacci.getSequence().toArray() );
     }
 
+    @Test
+    public void fibonacciSequenceOfEvenNumbersMax100(){
+        List<Integer> expectedArray = Arrays.asList( 2, 8, 34 );
+        Fibonacci fibonacci = new Fibonacci(100);
+        fibonacci.filter = new Fibonacci.IntegerFilter() {
+            @Override
+            public boolean shouldInclude( Integer i ) {
+                return i % 2 == 0;
+            }
+        };
+        assertArrayEquals( expectedArray.toArray(), fibonacci.getSequence().toArray() );
+    }
+
 }

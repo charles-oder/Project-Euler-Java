@@ -12,6 +12,13 @@ public class Fibonacci {
 
     public int count;
     public int max;
+    public IntegerFilter filter;
+    private Integer currentValue;
+    private Integer[] lastTwo;
+
+    public interface IntegerFilter {
+        boolean shouldInclude( Integer i );
+    }
 
     public Fibonacci(int max){
         this.max = max;
@@ -20,14 +27,22 @@ public class Fibonacci {
 
     public List<Integer> getSequence() {
         List<Integer> output = new ArrayList<Integer>();
-        Integer[] lastTwo = new Integer[] {0, 1};
-        Integer currentValue = lastTwo[1];
-        while (currentValue <= max && output.size() < count ) {
+        lastTwo = new Integer[] {0, 1};
+        currentValue = lastTwo[1];
+        while ( currentValue <= max && output.size() < count ) {
+            if ( filter != null && !filter.shouldInclude( currentValue ) ) {
+                incrementValues();
+                continue;
+            }
             output.add( currentValue );
-            lastTwo[0] = lastTwo[1];
-            lastTwo[1] = currentValue;
-            currentValue = lastTwo[0] + lastTwo[1];
+            incrementValues();
         }
         return output;
+    }
+
+    private void incrementValues() {
+        lastTwo[0] = lastTwo[1];
+        lastTwo[1] = currentValue;
+        currentValue = lastTwo[0] + lastTwo[1];
     }
 }
