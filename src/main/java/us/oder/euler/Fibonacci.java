@@ -10,17 +10,19 @@ import java.util.List;
  */
 public class Fibonacci {
 
-    private final int count;
+    public int count;
+    public int max;
 
-    public Fibonacci(int count){
-        this.count = count;
+    public Fibonacci(int max){
+        this.max = max;
+        this.count = Integer.MAX_VALUE;
     }
 
     public List<Integer> getSequence() {
         List<Integer> output = new ArrayList<Integer>();
         Integer[] lastTwo = new Integer[] {0, 1};
         Integer currentValue = lastTwo[1];
-        while (output.size() < count ) {
+        while (currentValue <= max && output.size() < count ) {
             output.add( currentValue );
             lastTwo[0] = lastTwo[1];
             lastTwo[1] = currentValue;

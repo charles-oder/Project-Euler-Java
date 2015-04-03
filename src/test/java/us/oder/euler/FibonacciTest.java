@@ -12,7 +12,15 @@ public class FibonacciTest {
     @Test
     public void fibonacciSequenceOfTen(){
         List<Integer> expectedArray = Arrays.asList( 1, 2, 3, 5, 8, 13, 21, 34, 55, 89 );
-        Fibonacci fibonacci = new Fibonacci(10);
+        Fibonacci fibonacci = new Fibonacci(1000);
+        fibonacci.count = 10;
+        assertArrayEquals( expectedArray.toArray(), fibonacci.getSequence().toArray() );
+    }
+
+    @Test
+    public void fibonacciSequenceOfMax50(){
+        List<Integer> expectedArray = Arrays.asList( 1, 2, 3, 5, 8, 13, 21, 34 );
+        Fibonacci fibonacci = new Fibonacci(50);
         assertArrayEquals( expectedArray.toArray(), fibonacci.getSequence().toArray() );
     }
 
