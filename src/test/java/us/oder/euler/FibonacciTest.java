@@ -37,4 +37,26 @@ public class FibonacciTest {
         assertArrayEquals( expectedArray.toArray(), fibonacci.getSequence().toArray() );
     }
 
+    @Test
+    public void fibonacciSequenceOfEvenNumbersMax4000000(){
+        Integer expectedSum = 4613732;
+        Fibonacci fibonacci = new Fibonacci(4000000);
+        fibonacci.filter = new Fibonacci.IntegerFilter() {
+            @Override
+            public boolean shouldInclude( Integer i ) {
+                return i % 2 == 0;
+            }
+        };
+        assertEquals( expectedSum, sum(fibonacci.getSequence()) );
+    }
+
+    private Integer sum( List<Integer> sequence ) {
+        Integer total = 0;
+        for (Integer i : sequence ) {
+            total += i;
+        }
+
+        return total;
+    }
+
 }
