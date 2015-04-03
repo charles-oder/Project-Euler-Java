@@ -15,8 +15,12 @@ public class MultipleSequence {
     public int max;
 
     public MultipleSequence(int multiple){
+        this(multiple, multiple);
+    }
+
+    public MultipleSequence( int multiple, int max ) {
         this.multiple = multiple;
-        this.max = multiple;
+        this.max = max;
     }
 
     public Integer[] getSequence() {
