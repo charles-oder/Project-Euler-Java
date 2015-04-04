@@ -21,7 +21,7 @@ public class PrimeFactorGeneratorTest {
 
     @Test
     public void isPrimeForPrimeNonNumber(){
-        assertFalse( PrimeFactorGenerator.isPrime( 4L ) );
+        assertFalse( PrimeFactorGenerator.isPrime( 1L ) );
         assertFalse( PrimeFactorGenerator.isPrime( 6L ) );
         assertFalse( PrimeFactorGenerator.isPrime( 22L ) );
         assertFalse( PrimeFactorGenerator.isPrime( 100L ) );
