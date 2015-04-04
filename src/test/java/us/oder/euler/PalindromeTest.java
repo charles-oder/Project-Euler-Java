@@ -38,4 +38,11 @@ public class PalindromeTest {
         assertEquals( expectedValue, actualValue );
     }
 
+    @Test
+    public void findLargestPalindromeOfThreeDigitProducts() {
+        int expectedValue = 906609;
+        int actualValue = Palindrome.findLargestPalindromeOfProducts(3);
+        assertEquals( expectedValue, actualValue );
+    }
+
 }
