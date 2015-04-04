@@ -17,4 +17,14 @@ public abstract class Palindrome {
         }
         return digits;
     }
+
+    public static boolean isPalindrome( int value ) {
+        List<Integer> digits = getDigitList( value );
+        for ( int i = 0; i < digits.size()/2; i++ ) {
+            if ( !digits.get( i ).equals( digits.get( digits.size() - i - 1 ) ) ) {
+                return false;
+            }
+        }
+        return true;
+    }
 }

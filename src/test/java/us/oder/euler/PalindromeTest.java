@@ -18,4 +18,17 @@ public class PalindromeTest {
         List<Integer> actualList = Palindrome.getDigitList(testValue);
         assertArrayEquals( expectedList.toArray(), actualList.toArray() );
     }
+
+    @Test
+    public void isPalindromeOnPalindrome() {
+        int testValue = 9009;
+        assertTrue( Palindrome.isPalindrome( testValue ) );
+    }
+
+    @Test
+    public void isPalindromeOnNonPalindrome() {
+        int testValue = 9019;
+        assertFalse( Palindrome.isPalindrome( testValue ) );
+    }
+
 }
