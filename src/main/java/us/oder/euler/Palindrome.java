@@ -27,4 +27,17 @@ public abstract class Palindrome {
         }
         return true;
     }
+
+    public static int findLargestPalindromeOfProducts( int digitLength ) {
+        double max = Math.pow( 10, digitLength );
+        int largestPalindrome = 0;
+        for ( int x = 1; x < max; x++ ) {
+            for ( int y = 1; y < max; y++ ) {
+                if ( isPalindrome( x * y ) && ( x * y > largestPalindrome ) ) {
+                    largestPalindrome = x * y;
+                }
+            }
+        }
+        return largestPalindrome;
+    }
 }

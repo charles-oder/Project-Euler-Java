@@ -31,4 +31,11 @@ public class PalindromeTest {
         assertFalse( Palindrome.isPalindrome( testValue ) );
     }
 
+    @Test
+    public void findLargestPalindromeOfTwoDigitProducts() {
+        int expectedValue = 9009;
+        int actualValue = Palindrome.findLargestPalindromeOfProducts(2);
+        assertEquals( expectedValue, actualValue );
+    }
+
 }
