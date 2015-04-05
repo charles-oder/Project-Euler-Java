@@ -19,4 +19,11 @@ public class FactorsTest {
         int actualValue = Factors.generateSmallestDividendForSequence( Integer.MAX_VALUE - 10,Integer.MAX_VALUE );
         assertEquals( expectedValue, actualValue );
     }
+
+    @Test
+    public void generateProductOfFactorsOneThroughTwenty(){
+        int expectedValue = 232792560;
+        int actualValue = Factors.generateSmallestDividendForSequence( 1, 20 );
+        assertEquals( expectedValue, actualValue );
+    }
 }
