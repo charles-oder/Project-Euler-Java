@@ -13,4 +13,10 @@ public class FactorsTest {
         assertEquals( expectedValue, actualValue );
     }
 
+    @Test
+    public void generateProductOfWayTooBigOfNumbers() {
+        int expectedValue = 0;
+        int actualValue = Factors.generateSmallestDividendForSequence( 8675309,8676309 );
+        assertEquals( expectedValue, actualValue );
+    }
 }
