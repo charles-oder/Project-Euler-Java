@@ -25,4 +25,12 @@ public class Factors {
         }
         return true;
     }
+
+    public static int generateSmallestDividendForSequence( int sequenceStart, int sequenceEnd ) {
+        int[] intArray = new int[sequenceEnd - sequenceStart];
+        for ( int i = 0; i < intArray.length; i++ ) {
+            intArray[i] = sequenceStart + i;
+        }
+        return generateSmallestDividend( intArray );
+    }
 }
