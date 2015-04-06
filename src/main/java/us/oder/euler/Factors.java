@@ -8,7 +8,8 @@ package us.oder.euler;
 public class Factors {
     public static int generateSmallestDividend( int[] intArray ) {
         int output;
-        for (output = intArray[0]; output < Integer.MAX_VALUE; output++) {
+        int increment = intArray.length - 1;
+        for (output = intArray[ increment ]; output < Integer.MAX_VALUE; output += intArray[ increment ]) {
             if (isDivisibleByAllValues( output, intArray )) {
                 return output;
             }
